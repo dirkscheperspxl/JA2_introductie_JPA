@@ -10,12 +10,13 @@ import javax.persistence.Table;
 @Table(name = "contacts")
 public class Contact {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+//	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String name;
 	private int phone;
 	private String email;
 
+	//default consructuor moet altijd aanwezig zijn !!!!!
 	public Contact() {
 	}
 

@@ -33,14 +33,17 @@ public class Demo4EntityManager {
 			tx.commit();
 
 			tx.begin();
-			message = new Message(MESSAGE_ID, "AAA");
-			print(1, message);
+			message = new Message("AAA");
 			entityManager.persist(message);
+			print(1, message);
+
 			tx.commit();
+
 			print(2, message);
 			message.setText("BBB");
 			tx.begin();
-			entityManager.refresh(message);
+		//	entityManager.refresh(message);
+
 			print(3, message);
 			entityManager.detach(message);
 			message.setText("CCC");
@@ -58,7 +61,7 @@ public class Demo4EntityManager {
 			tx.begin();
 			tx.commit();
 			print(9, message);
-			message = entityManager.find(Message.class, MESSAGE_ID);
+			message = entityManager.find(Message.class,1L);
 			print(10, message);
 			message.setText("EEE");
 			print(11, message);
@@ -84,6 +87,7 @@ public class Demo4EntityManager {
 			tx.commit();
 			print(18, message);
 			entityManager.close();
+
 		}
 		finally {
 			if (entityManager != null) {

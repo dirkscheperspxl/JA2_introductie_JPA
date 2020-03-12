@@ -2,11 +2,9 @@ package be.pxl.ja2.jpa;
 
 import be.pxl.ja2.jpa.model.Contact;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.EntityTransaction;
-import javax.persistence.Persistence;
-import javax.persistence.TypedQuery;
+import javax.persistence.*;
+//import javax.persistence.Persistence;
+
 
 public class Demo3Update {
 	public static void main(String[] args) {
